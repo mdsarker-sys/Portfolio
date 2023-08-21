@@ -245,15 +245,10 @@ h4 {
 
 
 
-.work-card {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  background: #ffffff;
-  text-align: center;
-  max-width: 300px;
-  margin: 0 auto;
-}
+
+
+
+
 
 /* Responsive styling for mobile */
 @media (max-width: 768px) {
@@ -261,18 +256,26 @@ h4 {
       margin: 10px auto;
   }
 }
-@media (min-width: 768px) {
-  .swiper-container, .swiper-slide, .work-item {
-      display: block !important;
-      visibility: visible !important;
+
+/* Desktop styling */
+@media (min-width: 769px) {
+  .swiper-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+
+  .swiper-slide {
+      /* To override Swiper.js's transformations and other styles on desktop */
+      width: auto !important;
       height: auto !important;
+      transform: none !important;
       opacity: 1 !important;
   }
-}
 
-@media (min-width: 768px) {
-  .swiper-container, .swiper-slide {
-      display: block !important;
+  /* Hide Swiper's controls on desktop */
+  .swiper-pagination, .swiper-button-next, .swiper-button-prev {
+      display: none;
   }
 }
 
@@ -287,6 +290,8 @@ h4 {
   border-radius: 15px; /* More rounded corners */
   transition: all 0.5s;
   box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* More pronounced shadow */
+  
+  align-items: center;
 }
 
 .work-item:hover {
@@ -332,7 +337,6 @@ h4 {
   z-index: -1;
   opacity: 0.7;
 }
-
 
 
 
